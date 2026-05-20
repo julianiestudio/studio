@@ -324,7 +324,19 @@
                         View Details
                     </button>
                 </div>
-
+<div class="square-product" onclick="openProductModal('The Heritage Bunny', 'An absolutely charming, entirely handcrafted heirloom bunny. Lovingly crocheted from premium ultra-soft yarn, featuring a delicate lilac bonnet and matching romper. A perfect cozy companion filled with warmth and nostalgic magic.')">
+                <div class="product-image-container">
+                    <img src="bunny1.png" alt="The Heritage Bunny" class="product-image">
+                </div>
+                <div>
+                    <h5>The Heritage Bunny</h5>
+                    <p>Lilac & Lavender Edition</p>
+                    <span style="color: #d4af37; font-weight: bold; font-size: 0.9em;">89€</span>
+                </div>
+                <button onclick="openProductModal('The Heritage Bunny', 'An absolutely charming, entirely handcrafted heirloom bunny. Lovingly crocheted from premium ultra-soft yarn, featuring a delicate lilac bonnet and matching romper. A perfect cozy companion filled with warmth and nostalgic magic.')">
+                    View Details
+                </button>
+            </div>
                 
                 </div>
             </div>
@@ -443,6 +455,10 @@ function openProductModal(title, description) {
     document.getElementById('productModal').classList.add('active');
     document.getElementById('orderFormBlock').style.display = 'none';
     document.getElementById('showFormBtn').style.display = 'block';
+    if (title === 'The Heritage Bunny') {
+                document.getElementById('modalImg1').src = 'bunny1.png';
+                document.getElementById('modalImg2').src = 'bunny2.png';
+            }
 }
 
 // При закрытии окна на крестик — очищаем картинку на всякий случай
