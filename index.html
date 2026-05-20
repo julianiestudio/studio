@@ -44,11 +44,24 @@
 
         /* ИНТЕРАКТИВНАЯ ПАНЕЛЬ */
         .interactive-container {
-            max-width: 1100px;
-            margin: 20px auto 0 auto;
-            display: flex;
-            gap: 15px;
-        }
+    max-width: 1200px;
+    margin: 20px auto 0 auto;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Возвращаем статье про рукав законное центральное место */
+.chronicles-block, .interactive-box:first-of-type {
+    flex: 2.5 !important; /* Делаем этот блок самым широким */
+    min-width: 450px;
+}
+
+/* Ограничиваем магазин, чтобы он не раздувался */
+.shop-block, .interactive-box:last-of-type {
+    flex: 1.2 !important;
+    max-width: 320px;
+}
         .interactive-box {
             flex: 1;
             background: #261d1a;
