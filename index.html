@@ -320,20 +320,34 @@
 
         <div class="side-column">
             
-           <div class="side-block">
+            <div class="side-block">
                 <h4>Shop</h4>
-                <div class="shop-products-container">
-                    <div class="square-product" onclick="openProductModal('The Heritage Bear', 'A unique heirloom companion...')">
+                
+                <div class="square-product">
+                    <div>
+                        <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+<img src="bear1.png" alt="The Heritage Bear" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; border: 1px solid rgba(212, 175, 55, 0.1); cursor: zoom-in;">
+<img src="bear2.png" alt="The Heritage Bear in hands" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; border: 1px solid rgba(212, 175, 55, 0.1); cursor: zoom-in;">
+                        </div>
                         <h5>The Heritage Bear</h5>
                         <p>Lilac & Gold Edition</p>
                         <span style="color: #d4af37; font-weight: bold; font-size: 0.9em;">75€</span>
                     </div>
-                    <div class="square-product" onclick="openProductModal('The Heritage Bunny', 'An absolutely charming...')">
-                        <h5>The Heritage Bunny</h5>
-                        <p>Lilac & Lavender Edition</p>
-                        <span style="color: #d4af37; font-weight: bold; font-size: 0.9em;">89€</span>
-                    </div>
+                    <button onclick="openProductModal('The Heritage Bear', 'A unique heirloom companion entirely handcrafted from fluffy mohair. Features a beautiful custom crocheted lavender dress woven with delicate gold sequins. Features vintage-style safety eyes and a hand-stitched nose. A perfect piece of quiet luxury.')" style="display: inline-block; padding: 6px 12px; background: transparent; border: 1px solid #d4af37; color: #d4af37; border-radius: 4px; font-size: 0.8em; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 10px; cursor: pointer; transition: all 0.3s ease;">
+                        View Details
+                    </button>
+                <div class="square-product">
+                <div class="product-image-container">
+                    <img src="bunny1.png" alt="The Heritage Bunny" class="product-image">
                 </div>
+                <div>
+                    <h5>The Heritage Bunny</h5>
+                    <p>Lilac & Lavender Edition</p>
+                    <span style="color: #d4af37; font-weight: bold; font-size: 0.9em;">89€</span>
+                </div>
+                <button onclick="openProductModal('The Heritage Bunny', 'An absolutely charming, entirely handcrafted heirloom bunny. Lovingly crocheted from premium ultra-soft yarn, featuring a delicate lilac bonnet and matching romper. A perfect cozy companion filled with warmth and nostalgic magic.')">
+                    View Details
+                </button>
             </div>
 
             <div class="side-block">
@@ -438,10 +452,33 @@ function openImageModal(imgSrc) {
     
     document.getElementById('productModal').classList.add('active');
 }
+
+// Изменяем старую функцию открытия товара, чтобы она прятала большую картинку
 function openProductModal(title, description) {
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalDescription').innerText = description;
+    
+    // Скрываем большую картинку, если открыли описание товара
+    document.getElementById('modalImage').style.display = 'none';
+    
+    document.getElementById('productModal').classList.add('active');
+    document.getElementById('orderFormBlock').style.display = 'none';
+    document.getElementById('showFormBtn').style.display = 'block';
+    if (title === 'The Heritage Bunny') {
+                document.getElementById('modalImg1').src = 'bunny1.png';
+                document.getElementById('modalImg2').src = 'bunny2.png';
+            }
+}
+
+// При закрытии окна на крестик — очищаем картинку на всякий случай
+function closeProductModal() {
+    document.getElementById('productModal').classList.remove('active');
+    document.getElementById('modalImage').style.display = 'none';
+}
+
+        function openProductModal(title, description) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalDescription').innerText = description;
-            document.getElementById('modalImage').style.display = 'none'; 
             document.getElementById('productModal').classList.add('active');
             document.getElementById('orderFormBlock').style.display = 'none';
             document.getElementById('showFormBtn').style.display = 'block';
@@ -511,3 +548,4 @@ function openProductModal(title, description) {
     </script>
 </body>
 </html>
+
