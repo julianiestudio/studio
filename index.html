@@ -317,6 +317,31 @@
                 <i style="font-size: 0.8em; color: #888;">May 2026</i>
             </div>
         </div>
+        <div class="post-content">
+    <span class="post-category">New Release</span>
+    <h2 class="post-title">Chasing Clouds: The Ombré Knit Is Complete ✨</h2>
+    
+    <p class="post-text">
+      I am so thrilled to finally share my latest creation with you! This sweater is pure magic woven into stitches. Knitted with the softest mohair blend, it feels like a warm, weightless hug.
+    </p>
+    <p class="post-text">
+      What I love most about this piece is the seamless transition of colors — from a delicate creamy white down to a rich, earthy espresso tone.
+    </p>
+    
+    <div class="post-mini-gallery">
+      <img src="sweater-detail1.png" alt="Mohair sweater texture close-up" class="mini-gallery-img">
+      <img src="sweater-detail2.png" alt="Balloon sleeves knitting detail" class="mini-gallery-img">
+    </div>
+    
+    <p class="post-text">
+      Countless hours, big needles, and a whole lot of love went into this knit. It’s officially ready to bring some handmade warmth into the chilly days.
+    </p>
+    
+    <div class="post-footer">
+      <span class="post-date">May 2026</span>
+      <a href="#" class="read-more-btn">Details & Care</a>
+    </div>
+  </div>
 
         <div class="side-column">
             
@@ -545,6 +570,23 @@ function closeProductModal() {
             const randomIndex = Math.floor(Math.random() * quotes.length);
             document.getElementById('oracleDisplay').innerText = quotes[randomIndex];
         }
+        /* Контейнер для двух маленьких картинок */
+.post-mini-gallery {
+  display: flex;
+  gap: 15px; /* Расстояние между картинками */
+  margin: 20px 0;
+}
+
+/* Стили для самих мини-фотографий */
+.mini-gallery-img {
+  flex: 1;
+  width: 50%;
+  height: 150px; /* Фиксированная высота, чтобы они были ровными */
+  object-fit: cover; /* Чтобы фото аккуратно вписывались и не сжимались */
+  border-radius: 6px; /* Мягкое скругление уголков */
+  border: 1px solid #f0e6e4;
+  transition: transform 0.3s ease;
+}
     </script>
 </body>
 </html>
