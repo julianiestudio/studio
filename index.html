@@ -261,7 +261,47 @@
             .square-product { min-width: 210px; }
         }
     </style>
-</head>
+   /* НОВЫЙ СТИЛЬ ДЛЯ СТАТЕЙ (ТЕМНАЯ ТЕМА) */
+.dark-article-block {
+  width: 100%;
+  max-width: 800px; /* Статья не будет растягиваться на весь экран */
+  margin-bottom: 50px; /* Отступ снизу до следующей статьи */
+  box-sizing: border-box;
+}
+
+/* Делаем так, чтобы фото никогда не ломало сайт */
+.dark-article-block img {
+  max-width: 100%; /* Картинка всегда вписывается в ширину колонки */
+  height: auto; /* Пропорции сохраняются, фото не плющится */
+  border-radius: 8px; /* Красивые скругленные углы */
+  margin: 20px 0;
+  display: block;
+}
+
+/* Настраиваем золотистые заголовки */
+.dark-article-block h2 {
+  color: #f8f0e3; /* Светло-молочный цвет текста */
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+/* Настраиваем цвет обычного текста */
+.dark-article-block p {
+  color: #dcd0c0; /* Мягкий бежевый, чтобы глаза не уставали */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.article-tag {
+  color: #b58d63; /* Золотисто-бронзовый для рубрики */
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 10px;
+}
 <body>
 
     <header>
@@ -519,50 +559,6 @@ function closeProductModal() {
             ];
             const randomIndex = Math.floor(Math.random() * quotes.length);
             document.getElementById('oracleDisplay').innerText = quotes[randomIndex];
-        }
-       
-/* НОВЫЙ СТИЛЬ ДЛЯ СТАТЕЙ (ТЕМНАЯ ТЕМА) */
-.dark-article-block {
-  width: 100%;
-  max-width: 800px; /* Статья не будет растягиваться на весь экран */
-  margin-bottom: 50px; /* Отступ снизу до следующей статьи */
-  box-sizing: border-box;
-}
-
-/* Делаем так, чтобы фото никогда не ломало сайт */
-.dark-article-block img {
-  max-width: 100%; /* Картинка всегда вписывается в ширину колонки */
-  height: auto; /* Пропорции сохраняются, фото не плющится */
-  border-radius: 8px; /* Красивые скругленные углы */
-  margin: 20px 0;
-  display: block;
-}
-
-/* Настраиваем золотистые заголовки */
-.dark-article-block h2 {
-  color: #f8f0e3; /* Светло-молочный цвет текста */
-  font-family: 'Georgia', serif;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-/* Настраиваем цвет обычного текста */
-.dark-article-block p {
-  color: #dcd0c0; /* Мягкий бежевый, чтобы глаза не уставали */
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.article-tag {
-  color: #b58d63; /* Золотисто-бронзовый для рубрики */
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  display: block;
-  margin-bottom: 10px;
-}
-    </script>
-</body>
+        } 
 </html>
 
