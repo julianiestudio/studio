@@ -505,8 +505,7 @@
 
             <div id="orderFormBlock" style="display: none; margin-top: 20px;">
                 <hr style="border: 0; border-top: 1px solid rgba(212,175,55,0.2); margin-bottom: 20px;">
-                <h4 style="color: #d4af37; margin: 0 0 5px 0; font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.05em;">Delivery Address</h4>
-               
+                
                 <button onclick="sendOrderAndPay()" style="width: 100%; padding: 12px; background: #d4af37; border: none; color: #1c1412; font-weight: bold; border-radius: 4px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.3s ease;">
                     Send Order via Email
 </button>
@@ -555,14 +554,14 @@
 
         // Формирование заказа на почту
 function sendOrderAndPay() {
-    // Берем только название товара из заголовка окошка
+    // Теперь скрипт берёт только название зайки или мишки
     var product = document.getElementById('modalTitle').innerText;
 
-    // Формируем тему и текст письма
+    // Сразу формируем тему и текст письма без всяких проверок адреса
     var emailTitle = encodeURIComponent("Inquiry regarding: " + product);
     var emailBody = encodeURIComponent("Hello!\n\nI am interested in: " + product + ".\n\nI would like to ask some questions and discuss the order details.");
    
-    // Открываем почту покупателя с готовым письмом к вам
+    // Открываем почту
     window.location.href = "mailto:julianochka.art@gmail.com?subject=" + emailTitle + "&body=" + emailBody;
 }
         
