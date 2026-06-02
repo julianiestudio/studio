@@ -556,27 +556,24 @@
             document.getElementById('modalImage').style.display = 'none';
         }
 
-        // Формирование заказа на почту и переход на Wise
-        function sendOrderAndPay() {
-            var name = document.getElementById('custName').value;
-            var address = document.getElementById('custAddress').value;
-            var product = document.getElementById('modalTitle').innerText;
+        // Формирование заказа на почту
+function sendOrderAndPay() {
+    var name = document.getElementById('custName').value;
+    var address = document.getElementById('custAddress').value;
+    var product = document.getElementById('modalTitle').innerText;
 
-            if (!name || !address) {
-                alert('Please fill in all fields.');
-                return;
-            }
+    if (!name || !address) {
+        alert('Please fill in all fields.');
+        return;
+    }
 
-            var emailTitle = encodeURIComponent("Order Details - " + product);
-            var emailBody = encodeURIComponent("Hello!\n\nI would like to order: " + product + "\n\nMy Details:\nFull Name: " + name + "\n\nShipping Address:\n" + address + "\n\nI am proceeding to payment via Wise.");
-           
-            window.location.href = "mailto:julianochka.art@gmail.com?subject=" + emailTitle + "&body=" + emailBody;
-
-            setTimeout(function() {
-                window.open("https://wise.com/pay/me/yuliyal316", "_blank");
-            }, 1200);
-        }
-
+    var emailTitle = encodeURIComponent("Order Details - " + product);
+    // Из текста ниже также удалена фраза про переход на Wise
+    var emailBody = encodeURIComponent("Hello!\n\nI would like to order: " + product + "\n\nMy Details:\nFull Name: " + name + "\n\nShipping Address:\n" + address);
+   
+    window.location.href = "mailto:julianochka.art@gmail.com?subject=" + emailTitle + "&body=" + emailBody;
+}
+        
         // Переключение фоновой музыки/дождя
         let currentSound = null;
         const player = document.getElementById('ambientPlayer');
