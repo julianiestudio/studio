@@ -431,13 +431,13 @@
                         <p>Lilac & Gold Edition</p>
                         <span style="color: #d4af37; font-weight: bold; font-size: 0.9em; display: block; margin-bottom: 10px;">75€</span>
                         
-                        <button onclick="openProductModal('The Heritage Bear', 'A unique heirloom companion entirely handcrafted from fluffy mohair. Features a beautiful custom crocheted lavender dress woven with delicate gold sequins.')" style="margin-bottom: 8px; width: 100%;">
+                        <button onclick="openProductModal('The Heritage Bear', 'A unique heirloom companion entirely handcrafted from fluffy mohair. Features a beautiful custom crocheted lavender dress woven with delicate gold sequins.')" style="margin-bottom: 8px; width: 100%; position: relative; z-index: 9999; pointer-events: auto !important;">
                             View Details
                         </button>
                         
-                       <a href="mailto:julianochka.art@gmail.com?subject=Order%3A%20The%20Heritage%20Bear" style="display: block; text-align: center; text-decoration: none; padding: 6px 12px; background: #d4af37; color: #1c1412; font-weight: bold; border-radius: 4px; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.3s ease; position: relative; z-index: 9999;">
-    Order via Email ✉️
-</a> 
+                        <a href="mailto:julianochka.art@gmail.com?subject=Order%3A%20The%20Heritage%20Bear" style="display: block; text-align: center; text-decoration: none; padding: 6px 12px; background: #d4af37; color: #1c1412; font-weight: bold; border-radius: 4px; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.05em; position: relative; z-index: 9999; pointer-events: auto !important; transition: all 0.3s ease;">
+                            Order via Email ✉️
+                        </a>
                     </div>
                     
                     <div class="square-product">
@@ -496,26 +496,13 @@
         </a>
     </div>
 
-    <div class="modal-overlay" id="productModal">
+   <div class="modal-overlay" id="productModal">
         <div class="modal-box">
             <span class="close-modal" onclick="closeProductModal()">&times;</span>
-            <img id="modalImage" src="" style="width: 100%; max-height: 50vh; object-fit: contain; border-radius: 6px; margin-bottom: 15px; display: none; border: 1px solid rgba(212, 175, 55, 0.15);">
-           
             <h3 id="modalTitle" style="color: #d4af37; margin-top: 0; font-size: 1.4em; text-transform: uppercase; letter-spacing: 0.05em;">Product Title</h3>
-            <p id="modalDescription" style="color: rgba(255,255,255,0.8); font-size: 0.95em; line-height: 1.5; margin-bottom: 20px; font-style: italic;">Detailed product descriptions...</p>
-           
-            <button id="showFormBtn" onclick="document.getElementById('orderFormBlock').style.display='block'; this.style.display='none';" style="width: 100%; padding: 12px; background: transparent; border: 1px solid #d4af37; color: #d4af37; font-weight: bold; border-radius: 4px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 10px; transition: all 0.3s ease;">
-                Order & Shipping details 📦
-            </button>
-
-            <div id="orderFormBlock" style="display: none; margin-top: 20px;">
-                <hr style="border: 0; border-top: 1px solid rgba(212,175,55,0.2); margin-bottom: 20px;">
-                
-                <button onclick="sendOrderAndPay()" style="width: 100%; padding: 12px; background: #d4af37; border: none; color: #1c1412; font-weight: bold; border-radius: 4px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.3s ease;">
-                    Send Order via Email
-</button>
-            </div>
+            <p id="modalDescription" style="color: rgba(255,255,255,0.8); font-size: 0.95em; line-height: 1.5; margin-bottom: 10px; font-style: italic;">Detailed product descriptions...</p>
         </div>
+    </div>
     </div>
 
     <audio id="ambientPlayer" loop></audio>
