@@ -496,13 +496,20 @@
         </a>
     </div>
 
-   <div class="modal-overlay" id="productModal">
+  <div class="modal-overlay" id="productModal">
         <div class="modal-box">
             <span class="close-modal" onclick="closeProductModal()">&times;</span>
             <h3 id="modalTitle" style="color: #d4af37; margin-top: 0; font-size: 1.4em; text-transform: uppercase; letter-spacing: 0.05em;">Product Title</h3>
-            <p id="modalDescription" style="color: rgba(255,255,255,0.8); font-size: 0.95em; line-height: 1.5; margin-bottom: 10px; font-style: italic;">Detailed product descriptions...</p>
+            <p id="modalDescription" style="color: rgba(255,255,255,0.8); font-size: 0.95em; line-height: 1.5; margin-bottom: 20px; font-style: italic;">Detailed product descriptions...</p>
+           
+            <button id="showFormBtn" onclick="document.getElementById('orderFormBlock').style.display='block'; this.style.display='none';" style="width: 100%; padding: 12px; background: transparent; border: 1px solid #d4af37; color: #d4af37; font-weight: bold; border-radius: 4px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 10px; transition: all 0.3s ease;">
+                Order & Shipping details 📦
+            </button>
+
+            <div id="orderFormBlock" style="display: none; margin-top: 20px;">
+                <hr style="border: 0; border-top: 1px solid rgba(212,175,55,0.2); margin-bottom: 20px;">
+                </div>
         </div>
-    </div>
     </div>
 
     <audio id="ambientPlayer" loop></audio>
