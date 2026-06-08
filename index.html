@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Artisan Workshop | Chronicles & Creations</title>
+    <title>Julianie Studio | Chronicles & Creations</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
             margin: 0;
             padding: 15px;
         }
-        
+       
         header {
             text-align: center;
             padding: 40px 20px;
@@ -28,7 +28,7 @@
             box-shadow: 0 4px 25px rgba(212, 175, 55, 0.12);
             margin-bottom: 20px;
         }
-        
+       
         h1 {
             margin: 0;
             font-size: 2.4em;
@@ -37,12 +37,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
-        header p { 
-            color: #c4b9b5; 
-            font-size: 1.1em; 
-            margin: 12px 0 5px 0; 
-            font-style: italic; 
+       
+        header p {
+            color: #c4b9b5;
+            font-size: 1.1em;
+            margin: 12px 0 5px 0;
+            font-style: italic;
         }
        
         .workshop-time {
@@ -108,11 +108,10 @@
             border-left: 3px solid #d4af37;
         }
 
-        /* Ограничение размеров картинок в статьях */
         .dark-article-block img, .article-card img {
             max-width: 100%;
-            max-height: 450px; /* Фото больше не будет гигантским */
-            object-fit: cover; /* Сохраняет пропорции без искажений */
+            max-height: 450px;
+            object-fit: cover;
             border-radius: 8px;
             margin: 20px auto;
             display: block;
@@ -188,7 +187,7 @@
             flex-direction: column;
             gap: 15px;
         }
-        
+       
         .square-product {
             background: #1c1412;
             border-radius: 6px;
@@ -201,38 +200,38 @@
             transition: transform 0.3s, border-color 0.3s;
             margin-bottom: 10px;
         }
-        
+       
         .square-product:hover {
             transform: translateY(-2px);
             border-color: rgba(212, 175, 55, 0.3);
         }
-        
-        .square-product h5 { 
-            margin: 10px 0 5px 0; 
-            color: #ffffff; 
-            font-size: 1.1em; 
-            font-weight: 400; 
+       
+        .square-product h5 {
+            margin: 10px 0 5px 0;
+            color: #ffffff;
+            font-size: 1.1em;
+            font-weight: 400;
         }
-        
-        .square-product p { 
-            font-size: 0.8em; 
-            color: #c4b9b5; 
-            margin: 0 0 10px 0; 
-            line-height: 1.4; 
+       
+        .square-product p {
+            font-size: 0.8em;
+            color: #c4b9b5;
+            margin: 0 0 10px 0;
+            line-height: 1.4;
         }
 
         .square-product button {
-            display: inline-block; 
-            padding: 6px 12px; 
-            background: transparent; 
-            border: 1px solid #d4af37; 
-            color: #d4af37; 
-            border-radius: 4px; 
-            font-size: 0.8em; 
-            font-family: 'Playfair Display', serif; 
-            text-transform: uppercase; 
-            letter-spacing: 0.05em; 
-            cursor: pointer; 
+            display: inline-block;
+            padding: 6px 12px;
+            background: transparent;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
 
@@ -288,6 +287,8 @@
             font-weight: 600;
             text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; text-decoration: none;
             font-family: 'Playfair Display', serif; transition: 0.3s;
+            cursor: pointer;
+            width: 100%;
         }
         .sponsor-btn:hover {
             background: linear-gradient(90deg, #bf953f, #d4af37);
@@ -329,8 +330,8 @@
         .modal-box p { font-size: 0.95em; color: #c4b9b5; line-height: 1.6; margin-bottom: 25px; }
 
         input, textarea {
-            width: 100%; padding: 10px; margin-bottom: 12px; 
-            background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.3); 
+            width: 100%; padding: 10px; margin-bottom: 12px;
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.3);
             color: #fff; border-radius: 4px; box-sizing: border-box;
         }
 
@@ -344,13 +345,13 @@
 <body>
          
     <header>
-        <h1>THE ARTISAN STUDIO</h1>
+        <h1>JULIANIE STUDIO</h1>
         <p>Handmade creations & cozy weekly chronicles</p>
         <div class="workshop-time" id="workshopClock">Loading Workshop Time...</div>
     </header>
 
     <div class="main-layout">
-        
+       
         <div class="articles-column">
 
             <div class="article-card">
@@ -359,39 +360,39 @@
                 <img src="12357.png" alt="Soft yarn" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; cursor: zoom-in;">
                 <img src="12905.png" alt="Slow process" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; cursor: zoom-in;">
                       </div>
-                <p>​When you think of a cozy, heirloom-quality sweater, wool or alpaca might be the first things that come to mind. But today, I want to introduce you to the unsung hero of modern knitwear that makes our latest creations feel like an absolute dream against your skin: premium, high-grade micro-polyester.
-​Take a look at this beautiful duo — the soft cream and delicate pink hues waiting to be transformed into wearable art.
-​While natural fibers are lovely, high-end tech fibers have completely revolutionized the knitting world, and here is why we absolutely love working with them:
-​Cloud-Like Softness (Zero Itch Factor): Unlike traditional wool, which can sometimes tickle or irritate sensitive skin, this premium fiber is incredibly smooth and velvety. It gives you all the fluffy texture and warmth without a single hint of scratchiness.
-​Stunning Durability & Shape Retention: Have you ever loved a handmade sweater so much that you were afraid to wear it? High-grade tech fibers ensure that the garment holds its shape perfectly, row after row, wash after wash. No stretching out of proportion, no losing its structure.
-​Vibrant, Lasting Color: These fibers catch and hold dyes beautifully, creating that subtle, luminous marled effect that makes the texture pop under any light.
-​Every stitch is crafted with both luxury and everyday wearability in mind. We combine the fluffiness of cloud-like mohair textures with the rock-solid reliability of premium fibers so that your favorite knit stays gorgeous for years to come.
-​Stay tuned to see how this dreamy cream-and-pink palette comes together! 🧶💗</p>
-                <p>​A Little Inside Secret: The Perfect Blend 🌸
-​Look closely at that dreamy pink fluff. It’s not just any yarn — it’s a luxurious blend of kid-mohair, pure silk, and premium polyester.
-​The Silk adds a delicate, subtle sheen and a beautiful drape that moves elegantly with you.
-​The Mohair creates that signature, ethereal cloud-like halo that catches the light so beautifully.
-​The Polyester acts as the core strength, keeping this delicate fabric durable, resilient, and perfectly shaped for everyday life.
-​It’s the ultimate mix of timeless luxury and modern practicality.</p>
+                <p>When you think of a cozy, heirloom-quality sweater, wool or alpaca might be the first things that come to mind. But today, I want to introduce you to the unsung hero of modern knitwear that makes our latest creations feel like an absolute dream against your skin: premium, high-grade micro-polyester.
+Take a look at this beautiful duo — the soft cream and delicate pink hues waiting to be transformed into wearable art.
+While natural fibers are lovely, high-end tech fibers have completely revolutionized the knitting world, and here is why we absolutely love working with them:
+Cloud-Like Softness (Zero Itch Factor): Unlike traditional wool, which can sometimes tickle or irritate sensitive skin, this premium fiber is incredibly smooth and velvety. It gives you all the fluffy texture and warmth without a single hint of scratchiness.
+Stunning Durability & Shape Retention: Have you ever loved a handmade sweater so much that you were afraid to wear it? High-grade tech fibers ensure that the garment holds its shape perfectly, row after row, wash after wash. No stretching out of proportion, no losing its structure.
+Vibrant, Lasting Color: These fibers catch and hold dyes beautifully, creating that subtle, luminous marled effect that makes the texture pop under any light.
+Every stitch is crafted with both luxury and everyday wearability in mind. We combine the fluffiness of cloud-like mohair textures with the rock-solid reliability of premium fibers so that your favorite knit stays gorgeous for years to come.
+Stay tuned to see how this dreamy cream-and-pink palette comes together! 🧶💗</p>
+                <p>A Little Inside Secret: The Perfect Blend 🌸
+Look closely at that dreamy pink fluff. It’s not just any yarn — it’s a luxurious blend of kid-mohair, pure silk, and premium polyester.
+The Silk adds a delicate, subtle sheen and a beautiful drape that moves elegantly with you.
+The Mohair creates that signature, ethereal cloud-like halo that catches the light so beautifully.
+The Polyester acts as the core strength, keeping this delicate fabric durable, resilient, and perfectly shaped for everyday life.
+It’s the ultimate mix of timeless luxury and modern practicality.</p>
                 <div class="post-footer">
                     <span class="post-date">June 2026</span>
                 </div>
             </div>
-            
+           
             <div class="dark-article-block">
                 <span class="article-tag">New Release</span>
                 <h2>Chasing Clouds: The Ombré Knit Is Complete ✨</h2>
-                
+               
                 <p>I am so thrilled to finally share my latest creation with you! This sweater is pure magic woven into stitches. Knitted with the softest mohair blend, it feels like a warm, weightless hug.</p>
                 <p>What I love most about this piece is the seamless transition of colors — from a delicate creamy white down to a rich, earthy espresso tone.</p>
-                
+               
                 <div class="post-mini-gallery">
                     <img src="sweater-detail1.png" alt="Mohair sweater texture close-up">
                     <img src="sweater-detail2.png" alt="Balloon sleeves knitting detail">
                 </div>
-                
+               
                 <p>Countless hours, big needles, and a whole lot of love went into this knit. It’s officially ready to bring some handmade warmth into the chilly days.</p>
-                
+               
                 <div class="post-footer">
                     <span class="post-date">May 2026</span>
                     <a href="#" class="read-more-btn">Details & Care</a>
@@ -415,13 +416,13 @@
                     <span class="post-date">May 2026</span>
                 </div>
             </div>
-            
+           
         </div> <div class="side-column">
            
             <div class="side-block">
                 <h4>Shop</h4>
                 <div class="shop-products-container">
-                    
+                   
                     <div class="square-product">
                         <div style="display: flex; gap: 10px; margin-bottom: 12px;">
                             <img src="bear1.png" alt="The Heritage Bear" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; cursor: zoom-in;">
@@ -447,7 +448,7 @@
                             View Details
                         </button>
                     </div>
-                    
+                   
                 </div>
             </div>
 
@@ -484,11 +485,13 @@
                 </div>
             </div>
 
-        </div> </div> <div style="margin-top: 40px; margin-bottom: 40px; text-align: center; padding: 20px 0;">
+        </div> </div> 
+        
+        <div style="margin-top: 40px; margin-bottom: 40px; text-align: center; padding: 20px 0;">
         <p style="font-size: 0.9em; color: rgba(255,255,255,0.7); margin-bottom: 12px;">Want to support my craft?</p>
-        <a href="https://wise.com/pay/me/yuliyal316" target="_blank" class="sponsor-btn" style="max-width: 250px; margin: 0 auto; display: block;">
+        <button onclick="supportFund()" class="sponsor-btn" style="max-width: 250px; margin: 0 auto; display: block;">
             Support my yarn fund ✨
-        </a>
+        </button>
     </div>
 
     <div class="modal-overlay" id="productModal">
@@ -505,10 +508,10 @@
 
             <div id="orderFormBlock" style="display: none; margin-top: 20px;">
                 <hr style="border: 0; border-top: 1px solid rgba(212,175,55,0.2); margin-bottom: 20px;">
-                
+               
                 <button onclick="sendOrderAndPay()" style="width: 100%; padding: 12px; background: #d4af37; border: none; color: #1c1412; font-weight: bold; border-radius: 4px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.3s ease;">
                     Send Order via Email
-</button>
+                </button>
             </div>
         </div>
     </div>
@@ -553,18 +556,20 @@
         }
 
         // Формирование заказа на почту
-function sendOrderAndPay() {
-    // Теперь скрипт берёт только название зайки или мишки
-    var product = document.getElementById('modalTitle').innerText;
+        function sendOrderAndPay() {
+            var product = document.getElementById('modalTitle').innerText;
+            var emailTitle = encodeURIComponent("Inquiry regarding: " + product);
+            var emailBody = encodeURIComponent("Hello!\n\nI am interested in: " + product + ".\n\nI would like to ask some questions and discuss the order details.");
+            window.location.href = "mailto:julianochka.art@gmail.com?subject=" + emailTitle + "&body=" + emailBody;
+        }
 
-    // Сразу формируем тему и текст письма без всяких проверок адреса
-    var emailTitle = encodeURIComponent("Inquiry regarding: " + product);
-    var emailBody = encodeURIComponent("Hello!\n\nI am interested in: " + product + ".\n\nI would like to ask some questions and discuss the order details.");
-   
-    // Открываем почту
-    window.location.href = "mailto:julianochka.art@gmail.com?subject=" + emailTitle + "&body=" + emailBody;
-}
-        
+        // Новая функция для фонда ниток
+        function supportFund() {
+            var emailTitle = encodeURIComponent("Support inquiry: Yarn Fund");
+            var emailBody = encodeURIComponent("Hello!\n\nI would like to support your work via the Yarn Fund. Could you please provide the details?");
+            window.location.href = "mailto:julianochka.art@gmail.com?subject=" + emailTitle + "&body=" + emailBody;
+        }
+       
         // Переключение фоновой музыки/дождя
         let currentSound = null;
         const player = document.getElementById('ambientPlayer');
@@ -593,7 +598,7 @@ function sendOrderAndPay() {
             }
         }
 
-        // Получение вдохновения (для будущего использования при необходимости)
+        // Получение вдохновения
         function getInspire() {
             const quotes = [
                 "«Beauty is in the details.» — Enjoy your creative journey today.",
