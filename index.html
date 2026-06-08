@@ -3,603 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Artisan Workshop | Chronicles & Creations</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-   
+    <title>Julianie Studio | Artisan Knitwear & Toys</title>
     <style>
+        /* Общие стили в стиле дорогого минимализма */
         body {
-            font-family: 'Playfair Display', serif;
-            background-color: #1c1412;
-            color: #e6dfdc;
+            background-color: #121212;
+            color: #e5e5e5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 15px;
+            padding: 0;
         }
-        
+
         header {
             text-align: center;
             padding: 40px 20px;
-            background: linear-gradient(135deg, #261d1a 0%, #1c1412 100%);
-            border: 1px solid #d4af37;
-            border-radius: 8px;
-            box-shadow: 0 4px 25px rgba(212, 175, 55, 0.12);
-            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
         }
-        
-        h1 {
-            margin: 0;
-            font-size: 2.4em;
-            font-weight: 600;
-            background: linear-gradient(90deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        header p { 
-            color: #c4b9b5; 
-            font-size: 1.1em; 
-            margin: 12px 0 5px 0; 
-            font-style: italic; 
-        }
-       
-        .workshop-time {
-            font-size: 0.85em;
-            letter-spacing: 2px;
+
+        header h1 {
             color: #d4af37;
-            margin-top: 10px;
+            font-size: 2.5em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
+            margin: 0 0 10px 0;
         }
 
-        /* ОСНОВНОЙ КОНТЕНТ И СЕТКА */
-        .main-layout {
-            max-width: 1100px;
-            margin: 20px auto;
-            display: flex;
-            gap: 20px;
-        }
-       
-        .articles-column {
-            flex: 2;
-            background: #261d1a;
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-sizing: border-box;
+        header p {
+            font-style: italic;
+            color: #a0a0a0;
+            margin: 0;
         }
 
-        .side-column {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 320px;
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        .side-block {
-            background: #261d1a;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        /* Красивая сетка для товаров */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Карточка товара */
+        .product-card {
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .side-block h4 {
-            margin: 0 0 15px 0;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #d4af37;
             text-align: center;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding-bottom: 8px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        /* СТИЛЬ ДЛЯ СТАТЕЙ */
-        .dark-article-block, .article-card {
-            width: 100%;
-            margin-bottom: 40px;
-            box-sizing: border-box;
-            background: #1c1412;
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 3px solid #d4af37;
-        }
-
-        /* Ограничение размеров картинок в статьях */
-        .dark-article-block img, .article-card img {
-            max-width: 100%;
-            max-height: 450px; /* Фото больше не будет гигантским */
-            object-fit: cover; /* Сохраняет пропорции без искажений */
-            border-radius: 8px;
-            margin: 20px auto;
-            display: block;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .dark-article-block h2, .article-card h3 {
-            color: #f8f0e3;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-
-        .dark-article-block p, .article-card p {
-            color: #dcd0c0;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .article-tag {
-            color: #b58d63;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .post-mini-gallery {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        .post-mini-gallery img {
-            width: 50%;
-            max-height: 250px;
-            object-fit: cover;
-        }
-
-        .post-footer {
-            margin-top: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9em;
-        }
-
-        .post-date {
-            color: #888;
-            font-style: italic;
-        }
-
-        .read-more-btn {
-            color: #d4af37;
-            text-decoration: none;
-            border-bottom: 1px dashed #d4af37;
-            transition: color 0.3s;
-        }
-
-        .read-more-btn:hover {
-            color: #fcf6ba;
-            border-color: #fcf6ba;
-        }
-
-        /* МАГАЗИН И ТОВАРЫ */
-        .shop-products-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .square-product {
-            background: #1c1412;
-            border-radius: 6px;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border: 1px solid rgba(255,255,255,0.05);
-            box-sizing: border-box;
-            transition: transform 0.3s, border-color 0.3s;
-            margin-bottom: 10px;
-        }
-        
-        .square-product:hover {
-            transform: translateY(-2px);
+        .product-card:hover {
+            transform: translateY(-5px);
             border-color: rgba(212, 175, 55, 0.3);
         }
-        
-        .square-product h5 { 
-            margin: 10px 0 5px 0; 
-            color: #ffffff; 
-            font-size: 1.1em; 
-            font-weight: 400; 
-        }
-        
-        .square-product p { 
-            font-size: 0.8em; 
-            color: #c4b9b5; 
-            margin: 0 0 10px 0; 
-            line-height: 1.4; 
+
+        /* Галерея изображений внутри карточки */
+        .product-gallery {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
         }
 
-        .square-product button {
-            display: inline-block; 
-            padding: 6px 12px; 
-            background: transparent; 
-            border: 1px solid #d4af37; 
-            color: #d4af37; 
-            border-radius: 4px; 
-            font-size: 0.8em; 
-            font-family: 'Playfair Display', serif; 
-            text-transform: uppercase; 
-            letter-spacing: 0.05em; 
-            cursor: pointer; 
-            transition: all 0.3s ease;
-        }
-
-        .square-product button:hover {
-            background: #d4af37;
-            color: #1c1412;
-        }
-
-        .product-image-container img {
-            width: 100%;
-            height: auto;
-            max-height: 150px;
+        .product-gallery img {
+            width: 50%;
+            height: 250px;
             object-fit: cover;
             border-radius: 6px;
         }
 
-        /* ПАЛИТРА, ПЛЕЕР, КНОПКИ */
-        .palette-wrap { display: flex; justify-content: center; gap: 10px; }
-        .color-dot { width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); }
-
-        .guest-actions { display: flex; justify-content: center; gap: 15px; }
-        .guest-btn {
-            background: none; border: 1px solid rgba(212, 175, 55, 0.3); color: #d4af37;
-            font-size: 1.2em; padding: 10px; border-radius: 50%; cursor: pointer; transition: 0.3s;
+        .product-card h3 {
+            color: #ffffff;
+            font-size: 1.3em;
+            margin: 10px 0 5px 0;
+            letter-spacing: 0.05em;
         }
-        .guest-btn:hover { background: rgba(212, 175, 55, 0.1); }
 
-        .ambient-btn {
-            background: #1c1412;
-            border: 1px solid rgba(255,255,255,0.1);
-            color: #c4b9b5;
-            padding: 6px 12px;
-            font-size: 0.8em;
+        .product-card .edition {
+            color: #a0a0a0;
+            font-size: 0.9em;
+            margin: 0 0 10px 0;
+        }
+
+        .product-card .price {
+            color: #d4af37;
+            font-weight: bold;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        /* Идеальная, чистая кнопка заказа на почту */
+        .order-button {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            background: #d4af37;
+            color: #121212;
+            text-decoration: none;
+            padding: 12px;
+            font-weight: bold;
             border-radius: 4px;
-            cursor: pointer;
-            margin: 4px;
-            font-family: 'Playfair Display', serif;
-            transition: 0.3s;
-        }
-        .ambient-btn.active {
-            border-color: #d4af37;
-            color: #fcf6ba;
-            background: rgba(212, 175, 55, 0.05);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85em;
+            transition: background 0.3s ease;
         }
 
-        .sponsor-btn {
-            display: block; text-align: center;
-            background: transparent;
-            border: 1px solid #d4af37;
-            color: #fcf6ba;
-            padding: 10px 0;
-            font-size: 0.8em;
-            font-weight: 600;
-            text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; text-decoration: none;
-            font-family: 'Playfair Display', serif; transition: 0.3s;
-        }
-        .sponsor-btn:hover {
-            background: linear-gradient(90deg, #bf953f, #d4af37);
-            color: #1c1412;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+        .order-button:hover {
+            background: #f1c40f;
         }
 
-        /* МОДАЛЬНЫЕ ОКНА */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(12, 8, 7, 0.85);
-            display: flex; align-items: center; justify-content: center;
-            opacity: 0; pointer-events: none;
-            transition: opacity 0.4s ease;
-            z-index: 1000;
-        }
-        .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-box {
-            background: #261d1a;
-            border: 1px solid #d4af37;
-            padding: 30px;
-            border-radius: 12px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-            transform: translateY(-20px);
-            transition: transform 0.4s ease;
-        }
-        .modal-overlay.active .modal-box { transform: translateY(0); }
-        .close-modal {
-            position: absolute; top: 15px; right: 20px;
-            font-size: 1.8em; color: #c4b9b5; cursor: pointer; transition: 0.3s;
-        }
-        .close-modal:hover { color: #ffffff; }
-       
-        .modal-box h3 { margin: 0 0 10px 0; color: #ffffff; font-size: 1.6em; font-weight: 400; }
-        .modal-box p { font-size: 0.95em; color: #c4b9b5; line-height: 1.6; margin-bottom: 25px; }
-
-        input, textarea {
-            width: 100%; padding: 10px; margin-bottom: 12px; 
-            background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.3); 
-            color: #fff; border-radius: 4px; box-sizing: border-box;
-        }
-
-        /* АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ */
-        @media (max-width: 768px) {
-            .main-layout { flex-direction: column; }
-            .side-column { max-width: 100%; order: 2; }
+        .note {
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-         
+
     <header>
-        <h1>THE ARTISAN STUDIO</h1>
-        <p>Handmade creations & cozy weekly chronicles</p>
-        <div class="workshop-time" id="workshopClock">Loading Workshop Time...</div>
+        <h1>Julianie Studio</h1>
+        <p>Handcrafted Heirloom Companions & Luxury Knitwear</p>
     </header>
 
-    <div class="main-layout">
-        
-        <div class="articles-column">
+    <div class="container">
+        <div class="products-grid">
 
-            <div class="article-card">
-                <h3>The Magic Behind the Softness: Why We Choose Premium High-Tech Fibers ✨</h3>
-                 <div class="post-mini-gallery">
-                <img src="12357.png" alt="Soft yarn" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; cursor: zoom-in;">
-                <img src="12905.png" alt="Slow process" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; cursor: zoom-in;">
-                      </div>
-                <p>​When you think of a cozy, heirloom-quality sweater, wool or alpaca might be the first things that come to mind. But today, I want to introduce you to the unsung hero of modern knitwear that makes our latest creations feel like an absolute dream against your skin: premium, high-grade micro-polyester.
-​Take a look at this beautiful duo — the soft cream and delicate pink hues waiting to be transformed into wearable art.
-​While natural fibers are lovely, high-end tech fibers have completely revolutionized the knitting world, and here is why we absolutely love working with them:
-​Cloud-Like Softness (Zero Itch Factor): Unlike traditional wool, which can sometimes tickle or irritate sensitive skin, this premium fiber is incredibly smooth and velvety. It gives you all the fluffy texture and warmth without a single hint of scratchiness.
-​Stunning Durability & Shape Retention: Have you ever loved a handmade sweater so much that you were afraid to wear it? High-grade tech fibers ensure that the garment holds its shape perfectly, row after row, wash after wash. No stretching out of proportion, no losing its structure.
-​Vibrant, Lasting Color: These fibers catch and hold dyes beautifully, creating that subtle, luminous marled effect that makes the texture pop under any light.
-​Every stitch is crafted with both luxury and everyday wearability in mind. We combine the fluffiness of cloud-like mohair textures with the rock-solid reliability of premium fibers so that your favorite knit stays gorgeous for years to come.
-​Stay tuned to see how this dreamy cream-and-pink palette comes together! 🧶💗</p>
-                <p>​A Little Inside Secret: The Perfect Blend 🌸
-​Look closely at that dreamy pink fluff. It’s not just any yarn — it’s a luxurious blend of kid-mohair, pure silk, and premium polyester.
-​The Silk adds a delicate, subtle sheen and a beautiful drape that moves elegantly with you.
-​The Mohair creates that signature, ethereal cloud-like halo that catches the light so beautifully.
-​The Polyester acts as the core strength, keeping this delicate fabric durable, resilient, and perfectly shaped for everyday life.
-​It’s the ultimate mix of timeless luxury and modern practicality.</p>
-                <div class="post-footer">
-                    <span class="post-date">June 2026</span>
+            <div class="product-card">
+                <div class="product-gallery">
+                    <img src="bear1.png" alt="The Heritage Bear">
+                    <img src="bear2.png" alt="The Heritage Bear">
                 </div>
-            </div>
-            
-            <div class="dark-article-block">
-                <span class="article-tag">New Release</span>
-                <h2>Chasing Clouds: The Ombré Knit Is Complete ✨</h2>
-                
-                <p>I am so thrilled to finally share my latest creation with you! This sweater is pure magic woven into stitches. Knitted with the softest mohair blend, it feels like a warm, weightless hug.</p>
-                <p>What I love most about this piece is the seamless transition of colors — from a delicate creamy white down to a rich, earthy espresso tone.</p>
-                
-                <div class="post-mini-gallery">
-                    <img src="sweater-detail1.png" alt="Mohair sweater texture close-up">
-                    <img src="sweater-detail2.png" alt="Balloon sleeves knitting detail">
-                </div>
-                
-                <p>Countless hours, big needles, and a whole lot of love went into this knit. It’s officially ready to bring some handmade warmth into the chilly days.</p>
-                
-                <div class="post-footer">
-                    <span class="post-date">May 2026</span>
-                    <a href="#" class="read-more-btn">Details & Care</a>
-                </div>
+                <h3>The Heritage Bear</h3>
+                <p class="edition">Lilac & Gold Edition</p>
+                <span class="price">75€</span>
+                <a href="mailto:julianochka.art@gmail.com?subject=Order Inquiry: The Heritage Bear" class="order-button">
+                    Inquire via Email
+                </a>
             </div>
 
-            <div class="article-card">
-                <h3>The Anatomy of a Sleeve: Soft Radiance</h3>
-                <img src="sleeve.png" alt="Sequin Sleeve">
-                <p>There is a distinct, rhythmic peace in watching a garment grow, row by row. Right now, my hands are occupied with shaping the sleeves for a new custom sweater, and it's a beautiful study in contrasts.</p>
-                <p>I wanted to capture the soft transition of morning mist - moving from a deep, grounding espresso brown at the cuffs into a weightless, cloud-like cream. To add a layer of subtle magic, I am weaving in a delicate strand of gold sequins. They catch the light quietly, like morning dew.</p>
-                <div class="post-footer">
-                    <span class="post-date">May 2026</span>
+            <div class="product-card">
+                <div class="product-gallery">
+                    <img src="bunny1.png" alt="The Heritage Bunny">
+                    <img src="bunny2.png" alt="The Heritage Bunny">
                 </div>
+                <h3>The Heritage Bunny</h3>
+                <p class="edition">Lilac & Lavender Edition</p>
+                <span class="price">89€</span>
+                <a href="mailto:julianochka.art@gmail.com?subject=Order Inquiry: The Heritage Bunny" class="order-button">
+                    Inquire via Email
+                </a>
             </div>
 
-            <div class="article-card">
-                <h3>The Beauty of Slow Work</h3>
-                <p>There is a special magic in things that cannot be rushed. Each row of stitches is a minute of peace. Today I am exploring how soft textures from the local market can look like high-end art.</p>
-                <div class="post-footer">
-                    <span class="post-date">May 2026</span>
-                </div>
-            </div>
-            
-        </div> <div class="side-column">
-           
-            <div class="side-block">
-                <h4>Shop</h4>
-                <div class="shop-products-container">
-                    
-                    <div class="square-product">
-                        <div style="display: flex; gap: 10px; margin-bottom: 12px;">
-                            <img src="bear1.png" alt="The Heritage Bear" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px;">
-                            <img src="bear2.png" alt="The Heritage Bear in hands" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px;">
-                        </div>
-                        <h5>The Heritage Bear</h5>
-                        <p>Lilac & Gold Edition</p>
-                        <span style="color: #d4af37; font-weight: bold; font-size: 0.9em; display: block; margin-bottom: 10px;">75€</span>
-                        
-                        <button onclick="openProductModal('The Heritage Bear', 'A unique heirloom companion entirely handcrafted from fluffy mohair. Features a beautiful custom crocheted lavender dress woven with delicate gold sequins.')" style="margin-bottom: 8px; width: 100%; position: relative; z-index: 9999; pointer-events: auto !important;">
-                            View Details
-                        </button>
-                        
-                        <a href="mailto:julianochka.art@gmail.com?subject=Order%3A%20The%20Heritage%20Bear" style="display: block; text-align: center; text-decoration: none; padding: 6px 12px; background: #d4af37; color: #1c1412; font-weight: bold; border-radius: 4px; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.05em; position: relative !important; z-index: 9999; !important; pointer-events: auto !important; cursor: pointer;">
-                            Order via Email 
-                        </a>
-                    </div>
-                    
-                    <div class="square-product">
-                        <div style="display: flex; gap: 10px; margin-bottom: 12px;">
-                            <img src="bunny1.png" alt="The Heritage Bunny" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; cursor: zoom-in;">
-                            <img src="bunny2.png" alt="The Heritage Bunny in hands" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; cursor: zoom-in;">
-                        </div>
-                        <h5>The Heritage Bunny</h5>
-                        <p>Lilac & Lavender Edition</p>
-                        <span style="color: #d4af37; font-weight: bold; font-size: 0.9em; display: block; margin-bottom: 10px;">89€</span>
-                        <button onclick="openProductModal('The Heritage Bunny', 'An absolutely charming, entirely handcrafted heirloom bunny. Lovingly crocheted from premium ultra-soft yarn, featuring a delicate lilac bonnet and matching romper. A perfect cozy companion filled with warmth and nostalgic magic.')">
-                            View Details
-                        </button>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="side-block">
-                <h4>Current Palette</h4>
-                <div class="palette-wrap">
-                    <div class="color-dot" style="background: #3e2723;"></div>
-                    <div class="color-dot" style="background: #d7ccc8;"></div>
-                    <div class="color-dot" style="background: #8d6e63;"></div>
-                    <div class="color-dot" style="background: #f5f5f5;"></div>
-                </div>
-            </div>
-
-            <div class="side-block">
-                <h4>Artist's Note</h4>
-                <p style="font-size: 0.85em; font-style: italic; text-align: center; margin: 0;">"Inspired by the silver mist outside my window and the smell of fresh coffee."</p>
-            </div>
-
-            <div class="side-block">
-                <h4>Leave a Spark</h4>
-                <div class="guest-actions">
-                    <button class="guest-btn" onclick="alert('Thank you for the warmth! Contrast loaded 🤎')">🤎</button>
-                    <button class="guest-btn" onclick="alert('Stay inspired! ✨')">✨</button>
-                    <button class="guest-btn" onclick="alert('A cup of virtual coffee for you! ☕')">☕</button>
-                </div>
-            </div>
-
-            <div class="side-block">
-                <h4>Workshop Ambient</h4>
-                <div style="text-align: center;">
-                    <button class="ambient-btn" id="btn-fire" onclick="toggleAmbient('fire', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')">☕ Cozy Music</button>
-                    <button class="ambient-btn" id="btn-rain" onclick="toggleAmbient('rain', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3')">🌧️ Soft Rain</button>
-                    <p style="font-size: 0.75em; color: #888; margin: 8px 0 0 0;">Click to toggle background sound</p>
-                </div>
-            </div>
-
-        </div> </div> <div style="margin-top: 40px; margin-bottom: 40px; text-align: center; padding: 20px 0;">
-        <p style="font-size: 0.9em; color: rgba(255,255,255,0.7); margin-bottom: 12px;">Want to support my craft?</p>
-        <a href="https://wise.com/pay/me/yuliyal316" target="_blank" class="sponsor-btn" style="max-width: 250px; margin: 0 auto; display: block;">
-            Support my yarn fund ✨
-        </a>
-    </div>
-
- <div class="modal-overlay" id="productModal">
-        <div class="modal-box">
-            <span class="close-modal" onclick="closeProductModal()">&times;</span>
-            
-            <img id="modalImage" src="" alt="Product Image" style="display: none; width: 100%; max-height: 250px; object-fit: cover; border-radius: 6px; margin-bottom: 15px;">
-            
-            <h3 id="modalTitle" style="color: #d4af37; margin-top: 0; font-size: 1.4em; text-transform: uppercase; letter-spacing: 0.05em;">Product Title</h3>
-            <p id="modalDescription" style="color: rgba(255,255,255,0.8); font-size: 0.95em; line-height: 1.5; margin-bottom: 20px; font-style: italic;">Detailed product descriptions...</p>
-           
-            <button id="showFormBtn" style="display: none;"></button>
-            <div id="orderFormBlock" style="display: none;"></div>
         </div>
+
+        <p class="note">All items are lovingly handmade to order. Click a button to send a direct availability inquiry.</p>
     </div>
-    
-    <audio id="ambientPlayer" loop></audio>
 
-    <script>
-        // Ирландские часы студии
-        function updateClock() {
-            const options = { timeZone: 'Europe/Dublin', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-            const formatter = new Intl.DateTimeFormat('en-US', options);
-            document.getElementById('workshopClock').innerText = "Workshop Time: " + formatter.format(new Date());
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        // Открытие картинки в модальном окне крупно
-        function openImageModal(imgSrc) {
-            document.getElementById('modalTitle').innerText = "View Image";
-            document.getElementById('modalDescription').innerText = "";
-            document.getElementById('modalImage').src = imgSrc;
-            document.getElementById('modalImage').style.display = 'block';
-            document.getElementById('showFormBtn').style.display = 'none';
-            document.getElementById('orderFormBlock').style.display = 'none';
-            document.getElementById('productModal').classList.add('active');
-        }
-
-        // Открытие карточки описания товара
-        function openProductModal(title, description) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDescription').innerText = description;
-            document.getElementById('modalImage').style.display = 'none';
-            document.getElementById('productModal').classList.add('active');
-            document.getElementById('orderFormBlock').style.display = 'none';
-            document.getElementById('showFormBtn').style.display = 'block';
-        }
-
-        // Закрытие модального окна
-        function closeProductModal() {
-            document.getElementById('productModal').classList.remove('active');
-            document.getElementById('modalImage').style.display = 'none';
-        }
-
-        // Формирование заказа на почту
-function sendOrderAndPay() {
-    // Теперь скрипт берёт только название зайки или мишки
-    var product = document.getElementById('modalTitle').innerText;
-
-    // Сразу формируем тему и текст письма без всяких проверок адреса
-    var emailTitle = encodeURIComponent("Inquiry regarding: " + product);
-    var emailBody = encodeURIComponent("Hello!\n\nI am interested in: " + product + ".\n\nI would like to ask some questions and discuss the order details.");
-   
-    // Открываем почту
-    window.location.href = "mailto:julianochka.art@gmail.com?subject=" + emailTitle + "&body=" + emailBody;
-}
-        
-        // Переключение фоновой музыки/дождя
-        let currentSound = null;
-        const player = document.getElementById('ambientPlayer');
-       
-        function toggleAmbient(type, url) {
-            const btnFire = document.getElementById('btn-fire');
-            const btnRain = document.getElementById('btn-rain');
-           
-            if (currentSound === type) {
-                player.pause();
-                currentSound = null;
-                btnFire.classList.remove('active');
-                btnRain.classList.remove('active');
-            } else {
-                player.src = url;
-                player.play().catch(e => console.log("Audio play interaction handled."));
-                currentSound = type;
-               
-                if(type === 'fire') {
-                    btnFire.classList.add('active');
-                    btnRain.classList.remove('active');
-                } else {
-                    btnRain.classList.add('active');
-                    btnFire.classList.remove('active');
-                }
-            }
-        }
-
-        // Получение вдохновения (для будущего использования при необходимости)
-        function getInspire() {
-            const quotes = [
-                "«Beauty is in the details.» — Enjoy your creative journey today.",
-                "«Simplicity is beauty.» — Small steps create breathtaking results.",
-                "«Art is a heart-to-heart talk.» — Let your hands speak today.",
-                "«Cozy details make the soul happy.» — Trust the process."
-            ];
-            const randomIndex = Math.floor(Math.random() * quotes.length);
-            const display = document.getElementById('oracleDisplay');
-            if(display) display.innerText = quotes[randomIndex];
-        }
-    </script>
+</body>
+</html
