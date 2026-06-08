@@ -53,7 +53,6 @@
             text-transform: uppercase;
         }
 
-        /* ОСНОВНОЙ КОНТЕНТ И СЕТКА */
         .main-layout {
             max-width: 1100px;
             margin: 20px auto;
@@ -97,7 +96,6 @@
             padding-bottom: 8px;
         }
 
-        /* СТИЛЬ ДЛЯ СТАТЕЙ */
         .dark-article-block, .article-card {
             width: 100%;
             margin-bottom: 40px;
@@ -181,7 +179,6 @@
             border-color: #fcf6ba;
         }
 
-        /* МАГАЗИН И ТОВАРЫ */
         .shop-products-container {
             display: flex;
             flex-direction: column;
@@ -248,7 +245,6 @@
             border-radius: 6px;
         }
 
-        /* ПАЛИТРА, ПЛЕЕР, КНОПКИ */
         .palette-wrap { display: flex; justify-content: center; gap: 10px; }
         .color-dot { width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); }
 
@@ -289,6 +285,7 @@
             font-family: 'Playfair Display', serif; transition: 0.3s;
             cursor: pointer;
             width: 100%;
+            box-sizing: border-box;
         }
         .sponsor-btn:hover {
             background: linear-gradient(90deg, #bf953f, #d4af37);
@@ -296,7 +293,6 @@
             box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
         }
 
-        /* МОДАЛЬНЫЕ ОКНА */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -327,7 +323,7 @@
         .close-modal:hover { color: #ffffff; }
        
         .modal-box h3 { margin: 0 0 10px 0; color: #ffffff; font-size: 1.6em; font-weight: 400; }
-        .modal-box p { font-size: 0.95em; color: #c4b9b5; line-height: 1.6; margin-bottom: 25px; }
+        .modal-box p { font-size: 0.95em; color: #c4b9b5; line-height: 1.5; margin-bottom: 25px; }
 
         input, textarea {
             width: 100%; padding: 10px; margin-bottom: 12px;
@@ -335,7 +331,6 @@
             color: #fff; border-radius: 4px; box-sizing: border-box;
         }
 
-        /* АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ */
         @media (max-width: 768px) {
             .main-layout { flex-direction: column; }
             .side-column { max-width: 100%; order: 2; }
@@ -357,23 +352,10 @@
             <div class="article-card">
                 <h3>The Magic Behind the Softness: Why We Choose Premium High-Tech Fibers ✨</h3>
                  <div class="post-mini-gallery">
-                <img src="12357.png" alt="Soft yarn" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; cursor: zoom-in;">
-                <img src="12905.png" alt="Slow process" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; cursor: zoom-in;">
+                <img src="12357.png" alt="Soft yarn" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px;">
+                <img src="12905.png" alt="Slow process" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px;">
                       </div>
-                <p>When you think of a cozy, heirloom-quality sweater, wool or alpaca might be the first things that come to mind. But today, I want to introduce you to the unsung hero of modern knitwear that makes our latest creations feel like an absolute dream against your skin: premium, high-grade micro-polyester.
-Take a look at this beautiful duo — the soft cream and delicate pink hues waiting to be transformed into wearable art.
-While natural fibers are lovely, high-end tech fibers have completely revolutionized the knitting world, and here is why we absolutely love working with them:
-Cloud-Like Softness (Zero Itch Factor): Unlike traditional wool, which can sometimes tickle or irritate sensitive skin, this premium fiber is incredibly smooth and velvety. It gives you all the fluffy texture and warmth without a single hint of scratchiness.
-Stunning Durability & Shape Retention: Have you ever loved a handmade sweater so much that you were afraid to wear it? High-grade tech fibers ensure that the garment holds its shape perfectly, row after row, wash after wash. No stretching out of proportion, no losing its structure.
-Vibrant, Lasting Color: These fibers catch and hold dyes beautifully, creating that subtle, luminous marled effect that makes the texture pop under any light.
-Every stitch is crafted with both luxury and everyday wearability in mind. We combine the fluffiness of cloud-like mohair textures with the rock-solid reliability of premium fibers so that your favorite knit stays gorgeous for years to come.
-Stay tuned to see how this dreamy cream-and-pink palette comes together! 🧶💗</p>
-                <p>A Little Inside Secret: The Perfect Blend 🌸
-Look closely at that dreamy pink fluff. It’s not just any yarn — it’s a luxurious blend of kid-mohair, pure silk, and premium polyester.
-The Silk adds a delicate, subtle sheen and a beautiful drape that moves elegantly with you.
-The Mohair creates that signature, ethereal cloud-like halo that catches the light so beautifully.
-The Polyester acts as the core strength, keeping this delicate fabric durable, resilient, and perfectly shaped for everyday life.
-It’s the ultimate mix of timeless luxury and modern practicality.</p>
+                <p>When you think of a cozy, heirloom-quality sweater, wool or alpaca might be the first things that come to mind. But today, I want to introduce you to the unsung hero of modern knitwear that makes our latest creations feel like an absolute dream against your skin: premium, high-grade micro-polyester...</p>
                 <div class="post-footer">
                     <span class="post-date">June 2026</span>
                 </div>
@@ -382,42 +364,24 @@ It’s the ultimate mix of timeless luxury and modern practicality.</p>
             <div class="dark-article-block">
                 <span class="article-tag">New Release</span>
                 <h2>Chasing Clouds: The Ombré Knit Is Complete ✨</h2>
-               
-                <p>I am so thrilled to finally share my latest creation with you! This sweater is pure magic woven into stitches. Knitted with the softest mohair blend, it feels like a warm, weightless hug.</p>
-                <p>What I love most about this piece is the seamless transition of colors — from a delicate creamy white down to a rich, earthy espresso tone.</p>
-               
-                <div class="post-mini-gallery">
-                    <img src="sweater-detail1.png" alt="Mohair sweater texture close-up">
-                    <img src="sweater-detail2.png" alt="Balloon sleeves knitting detail">
-                </div>
-               
-                <p>Countless hours, big needles, and a whole lot of love went into this knit. It’s officially ready to bring some handmade warmth into the chilly days.</p>
-               
+                <p>I am so thrilled to finally share my latest creation with you! This sweater is pure magic woven into stitches...</p>
                 <div class="post-footer">
                     <span class="post-date">May 2026</span>
-                    <a href="#" class="read-more-btn">Details & Care</a>
                 </div>
             </div>
 
             <div class="article-card">
                 <h3>The Anatomy of a Sleeve: Soft Radiance</h3>
                 <img src="sleeve.png" alt="Sequin Sleeve">
-                <p>There is a distinct, rhythmic peace in watching a garment grow, row by row. Right now, my hands are occupied with shaping the sleeves for a new custom sweater, and it's a beautiful study in contrasts.</p>
-                <p>I wanted to capture the soft transition of morning mist - moving from a deep, grounding espresso brown at the cuffs into a weightless, cloud-like cream. To add a layer of subtle magic, I am weaving in a delicate strand of gold sequins. They catch the light quietly, like morning dew.</p>
-                <div class="post-footer">
-                    <span class="post-date">May 2026</span>
-                </div>
-            </div>
-
-            <div class="article-card">
-                <h3>The Beauty of Slow Work</h3>
-                <p>There is a special magic in things that cannot be rushed. Each row of stitches is a minute of peace. Today I am exploring how soft textures from the local market can look like high-end art.</p>
+                <p>There is a distinct, rhythmic peace in watching a garment grow, row by row...</p>
                 <div class="post-footer">
                     <span class="post-date">May 2026</span>
                 </div>
             </div>
            
-        </div> <div class="side-column">
+        </div> 
+
+        <div class="side-column">
            
             <div class="side-block">
                 <h4>Shop</h4>
@@ -425,26 +389,26 @@ It’s the ultimate mix of timeless luxury and modern practicality.</p>
                    
                     <div class="square-product">
                         <div style="display: flex; gap: 10px; margin-bottom: 12px;">
-                            <img src="bear1.png" alt="The Heritage Bear" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; cursor: zoom-in;">
-                            <img src="bear2.png" alt="The Heritage Bear in hands" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; cursor: zoom-in;">
+                            <img src="bear1.png" alt="The Heritage Bear" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px;">
+                            <img src="bear2.png" alt="The Heritage Bear in hands" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px;">
                         </div>
                         <h5>The Heritage Bear</h5>
                         <p>Lilac & Gold Edition</p>
                         <span style="color: #d4af37; font-weight: bold; font-size: 0.9em; display: block; margin-bottom: 10px;">75€</span>
-                        <button onclick="openProductModal('The Heritage Bear', 'A unique heirloom companion entirely handcrafted from fluffy mohair. Features a beautiful custom crocheted lavender dress woven with delicate gold sequins. Features vintage-style safety eyes and a hand-stitched nose. A perfect piece of quiet luxury.')">
+                        <button onclick="openProductModal('The Heritage Bear', 'A unique heirloom companion entirely handcrafted from fluffy mohair. Features a beautiful custom crocheted lavender dress woven with delicate gold sequins.')">
                             View Details
                         </button>
                     </div>
 
                     <div class="square-product">
                         <div style="display: flex; gap: 10px; margin-bottom: 12px;">
-                            <img src="bunny1.png" alt="The Heritage Bunny" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; cursor: zoom-in;">
-                            <img src="bunny2.png" alt="The Heritage Bunny in hands" onclick="openImageModal(this.src)" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px; cursor: zoom-in;">
+                            <img src="bunny1.png" alt="The Heritage Bunny" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px;">
+                            <img src="bunny2.png" alt="The Heritage Bunny in hands" style="width: 50%; height: auto; object-fit: cover; border-radius: 6px;">
                         </div>
                         <h5>The Heritage Bunny</h5>
                         <p>Lilac & Lavender Edition</p>
                         <span style="color: #d4af37; font-weight: bold; font-size: 0.9em; display: block; margin-bottom: 10px;">89€</span>
-                        <button onclick="openProductModal('The Heritage Bunny', 'An absolutely charming, entirely handcrafted heirloom bunny. Lovingly crocheted from premium ultra-soft yarn, featuring a delicate lilac bonnet and matching romper. A perfect cozy companion filled with warmth and nostalgic magic.')">
+                        <button onclick="openProductModal('The Heritage Bunny', 'An absolutely charming, entirely handcrafted heirloom bunny. Lovingly crocheted from premium ultra-soft yarn.')">
                             View Details
                         </button>
                     </div>
@@ -468,37 +432,26 @@ It’s the ultimate mix of timeless luxury and modern practicality.</p>
             </div>
 
             <div class="side-block">
-                <h4>Leave a Spark</h4>
-                <div class="guest-actions">
-                    <button class="guest-btn" onclick="alert('Thank you for the warmth! Contrast loaded 🤎')">🤎</button>
-                    <button class="guest-btn" onclick="alert('Stay inspired! ✨')">✨</button>
-                    <button class="guest-btn" onclick="alert('A cup of virtual coffee for you! ☕')">☕</button>
-                </div>
-            </div>
-
-            <div class="side-block">
                 <h4>Workshop Ambient</h4>
                 <div style="text-align: center;">
                     <button class="ambient-btn" id="btn-fire" onclick="toggleAmbient('fire', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')">☕ Cozy Music</button>
                     <button class="ambient-btn" id="btn-rain" onclick="toggleAmbient('rain', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3')">🌧️ Soft Rain</button>
-                    <p style="font-size: 0.75em; color: #888; margin: 8px 0 0 0;">Click to toggle background sound</p>
                 </div>
             </div>
 
-        </div> </div> 
+        </div> 
+    </div> 
         
-        <div style="margin-top: 40px; margin-bottom: 40px; text-align: center; padding: 20px 0;">
+    <div style="margin-top: 40px; margin-bottom: 40px; text-align: center; padding: 20px 0;">
         <p style="font-size: 0.9em; color: rgba(255,255,255,0.7); margin-bottom: 12px;">Want to support my craft?</p>
-        <button onclick="supportFund()" class="sponsor-btn" style="max-width: 250px; margin: 0 auto; display: block;">
+        <a href="mailto:julianochka.art@gmail.com?subject=Support%20inquiry%3A%20Yarn%20Fund&body=Hello!%0A%0AI%20would%20like%20to%20support%20your%20work%20via%20the%20Yarn%20Fund." class="sponsor-btn" style="max-width: 250px; margin: 0 auto; display: block;">
             Support my yarn fund ✨
-        </button>
+        </a>
     </div>
 
     <div class="modal-overlay" id="productModal">
         <div class="modal-box">
             <span class="close-modal" onclick="closeProductModal()">&times;</span>
-            <img id="modalImage" src="" style="width: 100%; max-height: 50vh; object-fit: contain; border-radius: 6px; margin-bottom: 15px; display: none; border: 1px solid rgba(212, 175, 55, 0.15);">
-           
             <h3 id="modalTitle" style="color: #d4af37; margin-top: 0; font-size: 1.4em; text-transform: uppercase; letter-spacing: 0.05em;">Product Title</h3>
             <p id="modalDescription" style="color: rgba(255,255,255,0.8); font-size: 0.95em; line-height: 1.5; margin-bottom: 20px; font-style: italic;">Detailed product descriptions...</p>
            
@@ -508,7 +461,6 @@ It’s the ultimate mix of timeless luxury and modern practicality.</p>
 
             <div id="orderFormBlock" style="display: none; margin-top: 20px;">
                 <hr style="border: 0; border-top: 1px solid rgba(212,175,55,0.2); margin-bottom: 20px;">
-               
                 <button onclick="sendOrderAndPay()" style="width: 100%; padding: 12px; background: #d4af37; border: none; color: #1c1412; font-weight: bold; border-radius: 4px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.3s ease;">
                     Send Order via Email
                 </button>
@@ -519,7 +471,6 @@ It’s the ultimate mix of timeless luxury and modern practicality.</p>
     <audio id="ambientPlayer" loop></audio>
 
     <script>
-        // Ирландские часы студии
         function updateClock() {
             const options = { timeZone: 'Europe/Dublin', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
             const formatter = new Intl.DateTimeFormat('en-US', options);
@@ -528,49 +479,27 @@ It’s the ultimate mix of timeless luxury and modern practicality.</p>
         setInterval(updateClock, 1000);
         updateClock();
 
-        // Открытие картинки в модальном окне крупно
-        function openImageModal(imgSrc) {
-            document.getElementById('modalTitle').innerText = "View Image";
-            document.getElementById('modalDescription').innerText = "";
-            document.getElementById('modalImage').src = imgSrc;
-            document.getElementById('modalImage').style.display = 'block';
-            document.getElementById('showFormBtn').style.display = 'none';
-            document.getElementById('orderFormBlock').style.display = 'none';
-            document.getElementById('productModal').classList.add('active');
-        }
-
-        // Открытие карточки описания товара
         function openProductModal(title, description) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalDescription').innerText = description;
-            document.getElementById('modalImage').style.display = 'none';
             document.getElementById('productModal').classList.add('active');
             document.getElementById('orderFormBlock').style.display = 'none';
             document.getElementById('showFormBtn').style.display = 'block';
         }
 
-        // Закрытие модального окна
         function closeProductModal() {
             document.getElementById('productModal').classList.remove('active');
-            document.getElementById('modalImage').style.display = 'none';
         }
 
-        // Формирование заказа на почту
+        // ИСПРАВЛЕННАЯ НАПРЯМАЯ ФУНКЦИЯ ДЛЯ КНОПКИ SEND ORDER VIA EMAIL
         function sendOrderAndPay() {
-            var product = document.getElementById('modalTitle').innerText;
-            var emailTitle = encodeURIComponent("Inquiry regarding: " + product);
-            var emailBody = encodeURIComponent("Hello!\n\nI am interested in: " + product + ".\n\nI would like to ask some questions and discuss the order details.");
-            window.location.href = "mailto:julianochka.art@gmail.com?subject=" + emailTitle + "&body=" + emailBody;
-        }
-
-        // Новая функция для фонда ниток
-        function supportFund() {
-            var emailTitle = encodeURIComponent("Support inquiry: Yarn Fund");
-            var emailBody = encodeURIComponent("Hello!\n\nI would like to support your work via the Yarn Fund. Could you please provide the details?");
-            window.location.href = "mailto:julianochka.art@gmail.com?subject=" + emailTitle + "&body=" + emailBody;
+            var productTitle = document.getElementById('modalTitle').innerText;
+            var subject = encodeURIComponent("Order inquiry: " + productTitle);
+            var body = encodeURIComponent("Hello!\n\nI want to place an order for: " + productTitle + ".\n\nPlease provide me with information about payment methods and delivery cost.");
+            
+            window.location.href = "mailto:julianochka.art@gmail.com?subject=" + subject + "&body=" + body;
         }
        
-        // Переключение фоновой музыки/дождя
         let currentSound = null;
         const player = document.getElementById('ambientPlayer');
        
@@ -596,19 +525,6 @@ It’s the ultimate mix of timeless luxury and modern practicality.</p>
                     btnFire.classList.remove('active');
                 }
             }
-        }
-
-        // Получение вдохновения
-        function getInspire() {
-            const quotes = [
-                "«Beauty is in the details.» — Enjoy your creative journey today.",
-                "«Simplicity is beauty.» — Small steps create breathtaking results.",
-                "«Art is a heart-to-heart talk.» — Let your hands speak today.",
-                "«Cozy details make the soul happy.» — Trust the process."
-            ];
-            const randomIndex = Math.floor(Math.random() * quotes.length);
-            const display = document.getElementById('oracleDisplay');
-            if(display) display.innerText = quotes[randomIndex];
         }
     </script>
 </body>
