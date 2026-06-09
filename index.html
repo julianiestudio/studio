@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shop — Julianie Studio | Handcrafted Knitwear</title>
+<title>Julianie Studio | Handcrafted Knitwear</title>
 <style>
-  /* ============ Design Tokens ============ */
+  /* ============ Design Tokens — Chocolate palette ============ */
   :root {
-    --bg: #f4efe7;          /* warm cream */
-    --bg-alt: #ebe3d6;      /* deeper cream */
-    --ink: #2b2620;         /* near-black warm */
-    --muted: #7a7065;       /* taupe */
-    --line: #d8cfc0;        /* hairline */
-    --accent: #8a6f4e;      /* caramel */
-    --accent-dark: #5f4c34;
-    --card: #fbf8f2;
+    --bg: #f4ece3;          /* warm milk */
+    --bg-alt: #e8d9c7;      /* latte */
+    --ink: #3a281c;         /* dark chocolate */
+    --muted: #8a6f5b;       /* mocha */
+    --line: #d8c4ad;        /* hairline */
+    --accent: #6f4e37;      /* chocolate */
+    --accent-dark: #4a3225; /* bitter chocolate */
+    --card: #faf3ea;
     --radius: 2px;
     --maxw: 1240px;
   }
@@ -44,11 +44,9 @@
   .label,
   .nav a,
   .btn,
-  .filter-title,
   .price,
-  .eyebrow {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-  }
+  .eyebrow,
+  .contact-btn { font-family: "Helvetica Neue", Arial, sans-serif; }
 
   a { color: inherit; text-decoration: none; }
   img { display: block; max-width: 100%; }
@@ -64,18 +62,6 @@
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--accent);
-  }
-
-  /* ============ Top Bar ============ */
-  .topbar {
-    background: var(--ink);
-    color: var(--bg);
-    text-align: center;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    padding: 9px 16px;
   }
 
   /* ============ Header ============ */
@@ -98,6 +84,7 @@
     font-size: 26px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
+    color: var(--accent-dark);
   }
   .brand small {
     display: block;
@@ -109,6 +96,7 @@
   }
   .nav {
     display: flex;
+    align-items: center;
     gap: 28px;
     font-size: 12px;
     letter-spacing: 0.14em;
@@ -116,15 +104,16 @@
   }
   .nav a { color: var(--muted); transition: color .2s; }
   .nav a:hover { color: var(--ink); }
-  .nav-icons {
-    display: flex;
-    gap: 18px;
-    font-size: 12px;
-    letter-spacing: 0.14em;
+  .contact-btn {
+    border: 1px solid var(--accent);
+    color: var(--accent-dark);
+    padding: 10px 18px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    color: var(--muted);
+    transition: background .2s, color .2s;
   }
+  .contact-btn:hover { background: var(--accent); color: var(--card); }
 
   /* ============ Intro / Welcome ============ */
   .intro {
@@ -137,6 +126,7 @@
     line-height: 1.15;
     max-width: 16ch;
     margin: 0 auto 26px;
+    color: var(--accent-dark);
   }
   .intro p {
     max-width: 56ch;
@@ -163,10 +153,8 @@
     font-size: 20px;
   }
 
-  /* ============ Shop Layout ============ */
-  .shop {
-    padding: 20px 0 90px;
-  }
+  /* ============ Shop ============ */
+  .shop { padding: 20px 0 90px; }
   .shop-head {
     display: flex;
     align-items: baseline;
@@ -174,12 +162,9 @@
     border-top: 1px solid var(--ink);
     border-bottom: 1px solid var(--line);
     padding: 20px 0;
-    margin-bottom: 36px;
+    margin-bottom: 40px;
   }
-  .shop-head h2 {
-    font-size: 28px;
-    letter-spacing: 0.04em;
-  }
+  .shop-head h2 { font-size: 28px; letter-spacing: 0.04em; }
   .shop-head .count {
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 12px;
@@ -188,82 +173,26 @@
     color: var(--muted);
   }
 
-  .shop-grid {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 48px;
-    align-items: start;
-  }
-
-  /* Filters */
-  .filters {
-    position: sticky;
-    top: 110px;
-  }
-  .filter-title {
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 16px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--line);
-  }
-  .filters ul { list-style: none; margin: 0 0 28px; padding: 0; }
-  .filters li { margin: 0; }
-  .filters button.cat {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.02em;
-    color: var(--ink);
-    padding: 9px 0;
-    width: 100%;
-    text-align: left;
-    border-bottom: 1px solid transparent;
-    transition: color .2s;
-  }
-  .filters button.cat:hover { color: var(--accent); }
-  .filters button.cat.active {
-    color: var(--accent-dark);
-    font-weight: 700;
-  }
-  .clear-btn {
-    background: none;
-    border: 1px solid var(--ink);
-    cursor: pointer;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    padding: 11px 18px;
-    width: 100%;
-    color: var(--ink);
-    transition: background .2s, color .2s;
-  }
-  .clear-btn:hover { background: var(--ink); color: var(--bg); }
-
-  /* Products */
   .products {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 36px 28px;
   }
-  .product { cursor: pointer; }
+  .product {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+  }
   .product .thumb {
     aspect-ratio: 3 / 4;
     background: var(--bg-alt);
     overflow: hidden;
     margin-bottom: 14px;
     position: relative;
-  }
-  .product .thumb::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(160deg, rgba(255,255,255,0.18), rgba(95,76,52,0.12));
   }
   .product .thumb img {
     width: 100%; height: 100%;
@@ -283,37 +212,106 @@
     text-transform: uppercase;
     padding: 6px 10px;
   }
-  .product h3 {
-    font-size: 17px;
-    line-height: 1.3;
-    margin-bottom: 6px;
+  .product h3 { font-size: 17px; line-height: 1.3; margin-bottom: 6px; }
+  .price { font-size: 13px; letter-spacing: 0.06em; color: var(--muted); }
+
+  /* ============ Product Modal ============ */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(35, 24, 16, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 100;
   }
-  .price {
-    font-size: 13px;
-    letter-spacing: 0.06em;
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--card);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute;
+    top: 14px; right: 14px;
+    z-index: 5;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    cursor: pointer;
+    width: 36px; height: 36px;
+    font-size: 18px;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .modal-close:hover { background: var(--accent); color: var(--card); }
+  .gallery { background: var(--bg-alt); }
+  .gallery .main { aspect-ratio: 3 / 4; overflow: hidden; }
+  .gallery .main img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery .thumbs {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+  }
+  .gallery .thumbs img {
+    width: 64px; height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.6;
+    border: 1px solid transparent;
+    transition: opacity .2s;
+  }
+  .gallery .thumbs img:hover,
+  .gallery .thumbs img.active { opacity: 1; border-color: var(--accent); }
+  .modal-info { padding: 40px 36px; }
+  .modal-info .eyebrow { display: block; margin-bottom: 12px; }
+  .modal-info h3 { font-size: 26px; line-height: 1.2; margin-bottom: 14px; color: var(--accent-dark); }
+  .modal-info .modal-price {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+  .modal-info p {
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0 0 22px;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--card);
+    border: none;
+    cursor: pointer;
+    padding: 15px 26px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: background .2s;
+  }
+  .btn:hover { background: var(--accent-dark); }
+  .order-note {
+    margin-top: 16px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
     color: var(--muted);
   }
+  .order-note a { color: var(--accent-dark); border-bottom: 1px solid var(--accent-dark); }
 
   /* ============ Journal / Articles ============ */
   .journal {
     background: var(--bg-alt);
     padding: 80px 0;
   }
-  .journal-head {
-    text-align: center;
-    margin-bottom: 48px;
-  }
+  .journal-head { text-align: center; margin-bottom: 48px; }
   .journal-head .eyebrow { display: block; margin-bottom: 14px; }
-  .journal-head h2 {
-    font-size: clamp(26px, 4vw, 40px);
-    line-height: 1.2;
-  }
-  .journal-head p {
-    color: var(--muted);
-    font-size: 16px;
-    max-width: 50ch;
-    margin: 14px auto 0;
-  }
+  .journal-head h2 { font-size: clamp(26px, 4vw, 40px); line-height: 1.2; color: var(--accent-dark); }
+  .journal-head p { color: var(--muted); font-size: 16px; max-width: 50ch; margin: 14px auto 0; }
   .articles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -326,11 +324,7 @@
     overflow: hidden;
     margin-bottom: 18px;
   }
-  .article .thumb img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform .6s ease;
-  }
+  .article .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
   .article:hover .thumb img { transform: scale(1.05); }
   .article .meta {
     font-family: "Helvetica Neue", Arial, sans-serif;
@@ -340,16 +334,8 @@
     color: var(--accent);
     margin-bottom: 10px;
   }
-  .article h3 {
-    font-size: 21px;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
-  .article p {
-    color: var(--muted);
-    font-size: 15px;
-    margin: 0 0 12px;
-  }
+  .article h3 { font-size: 21px; line-height: 1.3; margin-bottom: 10px; }
+  .article p { color: var(--muted); font-size: 15px; margin: 0 0 12px; }
   .article .read {
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 12px;
@@ -360,76 +346,48 @@
     padding-bottom: 2px;
   }
 
+  /* ============ About / Contact ============ */
+  .about {
+    padding: 80px 0;
+    text-align: center;
+  }
+  .about .eyebrow { display: block; margin-bottom: 14px; }
+  .about h2 { font-size: clamp(26px, 4vw, 40px); margin-bottom: 18px; color: var(--accent-dark); }
+  .about p { color: var(--muted); font-size: 16px; max-width: 56ch; margin: 0 auto 14px; }
+  .about .btn { margin-top: 22px; }
+
   /* ============ Footer ============ */
   footer.site {
-    background: var(--bg-alt);
-    padding: 56px 0 30px;
-    border-top: 1px solid var(--line);
+    background: var(--accent-dark);
+    color: var(--bg);
+    padding: 40px 0;
+    text-align: center;
   }
-  .foot-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
-  }
-  footer .brand { font-size: 22px; margin-bottom: 14px; }
-  footer p { color: var(--muted); font-size: 15px; max-width: 40ch; }
-  footer h4 {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 16px;
-  }
-  footer ul { list-style: none; margin: 0; padding: 0; }
-  footer ul li { margin-bottom: 10px; }
-  footer ul a {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 14px;
-    color: var(--ink);
-    transition: color .2s;
-  }
-  footer ul a:hover { color: var(--accent); }
-  .foot-bottom {
-    border-top: 1px solid var(--line);
-    padding-top: 22px;
-    display: flex;
-    justify-content: space-between;
+  footer .brand { font-size: 20px; color: var(--bg); margin-bottom: 10px; }
+  footer p {
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 12px;
     letter-spacing: 0.08em;
-    color: var(--muted);
+    color: #d8c4ad;
+    margin: 4px 0;
   }
+  footer a { color: var(--bg); border-bottom: 1px solid var(--bg); }
 
   /* ============ Responsive ============ */
   @media (max-width: 960px) {
-    .shop-grid { grid-template-columns: 1fr; gap: 32px; }
-    .filters { position: static; }
-    .filters ul {
-      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px;
-    }
-    .filters button.cat {
-      width: auto; border: 1px solid var(--line);
-      padding: 8px 14px; border-radius: 40px;
-    }
-    .clear-btn { width: auto; }
     .products { grid-template-columns: repeat(2, 1fr); }
     .articles { grid-template-columns: 1fr 1fr; }
+    .modal { grid-template-columns: 1fr; max-height: 92vh; }
   }
   @media (max-width: 640px) {
-    .nav { display: none; }
+    .nav a:not(.contact-btn) { display: none; }
     .products { grid-template-columns: 1fr 1fr; gap: 24px 16px; }
     .articles { grid-template-columns: 1fr; }
-    .foot-grid { grid-template-columns: 1fr; }
     .intro { padding: 48px 0 40px; }
   }
 </style>
 </head>
 <body>
-
-  <!-- Announcement bar -->
-  <div class="topbar">Made to order · Crafted by hand over four weeks · Next order window: 15th – 21st May</div>
 
   <!-- Header -->
   <header class="site">
@@ -438,12 +396,9 @@
       <nav class="nav">
         <a href="#shop">Shop</a>
         <a href="#journal">Journal</a>
-        <a href="#">About</a>
+        <a href="#about">About</a>
+        <a class="contact-btn" href="mailto:julianochka.art@gmail.com?subject=Hello%20Julianie%20Studio">Contact me</a>
       </nav>
-      <div class="nav-icons">
-        <span>Search</span>
-        <span>Cart (0)</span>
-      </div>
     </div>
   </header>
 
@@ -460,98 +415,85 @@
   <section class="shop container" id="shop">
     <div class="shop-head">
       <h2>Shop</h2>
-      <span class="count">10 pieces</span>
+      <span class="count">4 pieces</span>
     </div>
 
-    <div class="shop-grid">
-      <!-- Filters -->
-      <aside class="filters">
-        <div class="filter-title">Categories</div>
-        <ul>
-          <li><button class="cat active">All pieces</button></li>
-          <li><button class="cat">Special commissions</button></li>
-          <li><button class="cat">Scarves</button></li>
-          <li><button class="cat">Jumpers</button></li>
-          <li><button class="cat">Cardigans</button></li>
-          <li><button class="cat">Vests</button></li>
-          <li><button class="cat">Hats</button></li>
-          <li><button class="cat">Pre-orders</button></li>
-        </ul>
-        <button class="clear-btn">Clear filters</button>
-      </aside>
+    <!-- =========================================================== -->
+    <!-- To add a new product, copy one <button class="product">…    -->
+    <!-- </button> block and edit the data-* attributes:             -->
+    <!--   data-title, data-price, data-desc                          -->
+    <!--   data-images = comma-separated photo URLs (first is cover) -->
+    <!-- Add <span class="tag">Pre-order</span> inside .thumb for a   -->
+    <!-- label, or remove it for a regular item.                      -->
+    <!-- =========================================================== -->
+    <div class="products">
 
-      <!-- Products -->
-      <!-- =========================================================== -->
-      <!-- To add a new product, copy one <article class="product">…  -->
-      <!-- </article> block and edit the image, title & price.        -->
-      <!-- Add <span class="tag">Pre-order</span> inside .thumb for a  -->
-      <!-- label, or remove it for a regular item.                    -->
-      <!-- =========================================================== -->
-      <div class="products">
-        <!-- ===== PRODUCT TEMPLATE — copy this whole block to add one ===== -->
-        <article class="product">
-          <div class="thumb"><span class="tag">Pre-order</span><img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=600&q=80" alt="The Chapel knit dress" /></div>
-          <h3>Pre-order: The Chapel Gúna</h3>
-          <p class="price">€700.00</p>
-        </article>
-        <!-- ===== END PRODUCT TEMPLATE ===== -->
+      <!-- ===== PRODUCT TEMPLATE — copy this whole block to add one ===== -->
+      <button class="product"
+        data-title="Pre-order: The Chapel Gúna"
+        data-price="€700.00"
+        data-tag="Pre-order"
+        data-desc="A flowing, hand-knitted dress in soft merino wool. Made entirely to order over four weeks, finished by hand and shaped to flatter. Available in natural cream, oatmeal and warm cocoa."
+        data-images="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80,https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80,https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80">
+        <div class="thumb"><span class="tag">Pre-order</span><img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=600&q=80" alt="The Chapel knit dress" /></div>
+        <h3>Pre-order: The Chapel Gúna</h3>
+        <p class="price">€700.00</p>
+      </button>
+      <!-- ===== END PRODUCT TEMPLATE ===== -->
 
-        <article class="product">
-          <div class="thumb"><img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=600&q=80" alt="The Big Hug travel wrap" /></div>
-          <h3>'TheBigHug' Travel Wrap</h3>
-          <p class="price">€185.00</p>
-        </article>
+      <button class="product"
+        data-title="'TheBigHug' Travel Wrap"
+        data-price="€185.00"
+        data-desc="An oversized, generously soft wrap to fold yourself into on long journeys. Knitted by hand in a chunky alpaca blend that holds warmth without weight."
+        data-images="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80,https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&w=800&q=80,https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=800&q=80">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=600&q=80" alt="The Big Hug travel wrap" /></div>
+        <h3>'TheBigHug' Travel Wrap</h3>
+        <p class="price">€185.00</p>
+      </button>
 
-        <article class="product">
-          <div class="thumb"><img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=600&q=80" alt="Detachable alpaca fringe shoulders" /></div>
-          <h3>'Halos' — Detachable Alpaca Fringe Shoulders</h3>
-          <p class="price">€85.00</p>
-        </article>
+      <button class="product"
+        data-title="Pre-order: TheBigSleeve Jumper"
+        data-price="€550.00"
+        data-tag="Pre-order"
+        data-desc="A statement jumper with sculptural balloon sleeves and a relaxed body. Hand-knitted to order in pure wool, with the fit and colour chosen together with you."
+        data-images="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=800&q=80,https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=800&q=80,https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80">
+        <div class="thumb"><span class="tag">Pre-order</span><img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80" alt="The Big Sleeve jumper" /></div>
+        <h3>Pre-order: TheBigSleeve Jumper</h3>
+        <p class="price">€550.00</p>
+      </button>
 
-        <article class="product">
-          <div class="thumb"><span class="tag">Pre-order</span><img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80" alt="The Big Sleeve jumper" /></div>
-          <h3>Pre-order: TheBigSleeve Jumper</h3>
-          <p class="price">€550.00</p>
-        </article>
+      <button class="product"
+        data-title="Pre-order: The Supersoft Vest"
+        data-price="€275.00"
+        data-tag="Pre-order"
+        data-desc="A cosy, layerable vest knitted in a brushed cocoa-toned yarn. Designed to sit over shirts and dresses through the cooler months. Made to order in your size."
+        data-images="https://images.unsplash.com/photo-1564859228273-274232fdb516?auto=format&fit=crop&w=800&q=80,https://images.unsplash.com/photo-1608744882201-52a7f7f3dd60?auto=format&fit=crop&w=800&q=80,https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80">
+        <div class="thumb"><span class="tag">Pre-order</span><img src="https://images.unsplash.com/photo-1564859228273-274232fdb516?auto=format&fit=crop&w=600&q=80" alt="The supersoft vest" /></div>
+        <h3>Pre-order: The Supersoft Vest</h3>
+        <p class="price">€275.00</p>
+      </button>
 
-        <article class="product">
-          <div class="thumb"><span class="tag">Pre-order</span><img src="https://images.unsplash.com/photo-1608744882201-52a7f7f3dd60?auto=format&fit=crop&w=600&q=80" alt="The Big Sleeve cardigan" /></div>
-          <h3>Pre-order: TheBigSleeve Cardigan</h3>
-          <p class="price">from €500.00</p>
-        </article>
-
-        <article class="product">
-          <div class="thumb"><span class="tag">Pre-order</span><img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="The day to night cardigan" /></div>
-          <h3>Pre-order: TheDaytoNightCardi</h3>
-          <p class="price">from €375.00</p>
-        </article>
-
-        <article class="product">
-          <div class="thumb"><span class="tag">Pre-order</span><img src="https://images.unsplash.com/photo-1564859228273-274232fdb516?auto=format&fit=crop&w=600&q=80" alt="The supersoft vest" /></div>
-          <h3>Pre-order: The Supersoft Vest</h3>
-          <p class="price">€275.00</p>
-        </article>
-
-        <article class="product">
-          <div class="thumb"><span class="tag">Pre-order</span><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="The Big Pink jumper" /></div>
-          <h3>Pre-order: TheBigPink</h3>
-          <p class="price">from €399.00</p>
-        </article>
-
-        <article class="product">
-          <div class="thumb"><span class="tag">Pre-order</span><img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=600&q=80" alt="The Petite Pink jumper" /></div>
-          <h3>Pre-order: ThePetitePink</h3>
-          <p class="price">from €399.00</p>
-        </article>
-
-        <article class="product">
-          <div class="thumb"><span class="tag">Waitlist</span><img src="https://images.unsplash.com/photo-1610631066894-62452ccb927c?auto=format&fit=crop&w=600&q=80" alt="Secure your place on the list" /></div>
-          <h3>Secure your place on the list</h3>
-          <p class="price">from €200.00</p>
-        </article>
-      </div>
     </div>
   </section>
+
+  <!-- Product Modal -->
+  <div class="modal-overlay" id="productModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <div class="gallery">
+        <div class="main"><img id="modalMainImg" src="" alt="" /></div>
+        <div class="thumbs" id="modalThumbs"></div>
+      </div>
+      <div class="modal-info">
+        <span class="eyebrow">Made to order</span>
+        <h3 id="modalTitle"></h3>
+        <div class="modal-price" id="modalPrice"></div>
+        <p id="modalDesc"></p>
+        <a class="btn" id="modalOrder" href="#">Order by email</a>
+        <p class="order-note">Questions? Write to <a href="mailto:julianochka.art@gmail.com">julianochka.art@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
 
   <!-- ============================================================= -->
   <!-- JOURNAL / ARTICLES                                            -->
@@ -580,7 +522,7 @@
         <article class="article">
           <div class="thumb"><img src="https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?auto=format&fit=crop&w=600&q=80" alt="Skeins of natural-dyed yarn" /></div>
           <div class="meta">Materials · 28 April 2026</div>
-          <h3>Choosing yarns: alpaca, merino & beyond</h3>
+          <h3>Choosing yarns: alpaca, merino &amp; beyond</h3>
           <p>How we source soft, responsible fibres and what makes each one feel the way it does.</p>
           <a href="#" class="read">Read article</a>
         </article>
@@ -596,50 +538,93 @@
     </div>
   </section>
 
+  <!-- About / Contact -->
+  <section class="about container" id="about">
+    <span class="eyebrow">About me</span>
+    <h2>Made by hand, with love and patience</h2>
+    <p>I'm Julianie — a knitter and slow-fashion maker. Every piece in the studio is created by my own hands, one stitch at a time, using natural fibres and traditional techniques.</p>
+    <p>If you'd like to order a piece, ask a question, or dream up something custom, I'd love to hear from you.</p>
+    <a class="btn" href="mailto:julianochka.art@gmail.com?subject=Hello%20Julianie%20Studio">Contact me by email</a>
+  </section>
+
   <!-- Footer -->
   <footer class="site">
     <div class="container">
-      <div class="foot-grid">
-        <div>
-          <div class="brand">Julianie Studio</div>
-          <p>Hand-knitted, made-to-order pieces created slowly and with care. Thank you for supporting small studios and traditional crafts.</p>
-        </div>
-        <div>
-          <h4>Shop</h4>
-          <ul>
-            <li><a href="#shop">All pieces</a></li>
-            <li><a href="#shop">Pre-orders</a></li>
-            <li><a href="#shop">Scarves</a></li>
-            <li><a href="#journal">Journal</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Studio</h4>
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Journal</a></li>
-            <li><a href="#">Care guide</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="foot-bottom">
-        <span>© 2026 Julianie Studio. All rights reserved.</span>
-        <span>Made with care · Slow fashion</span>
-      </div>
+      <div class="brand">Julianie Studio</div>
+      <p>Hand-knitted, made-to-order pieces created slowly and with care.</p>
+      <p>Write to me: <a href="mailto:julianochka.art@gmail.com">julianochka.art@gmail.com</a></p>
+      <p>© 2026 Julianie Studio · Slow fashion</p>
     </div>
   </footer>
 
   <script>
-    // Simple category filter toggle (visual only)
-    document.querySelectorAll('.filters .cat').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        document.querySelectorAll('.filters .cat').forEach(function (b) {
-          b.classList.remove('active');
-        });
-        btn.classList.add('active');
+    (function () {
+      var overlay = document.getElementById('productModal');
+      var mainImg = document.getElementById('modalMainImg');
+      var thumbs = document.getElementById('modalThumbs');
+      var titleEl = document.getElementById('modalTitle');
+      var priceEl = document.getElementById('modalPrice');
+      var descEl = document.getElementById('modalDesc');
+      var orderEl = document.getElementById('modalOrder');
+      var closeEl = document.getElementById('modalClose');
+      var EMAIL = 'julianochka.art@gmail.com';
+
+      function openModal(btn) {
+        var title = btn.getAttribute('data-title') || '';
+        var price = btn.getAttribute('data-price') || '';
+        var desc = btn.getAttribute('data-desc') || '';
+        var images = (btn.getAttribute('data-images') || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+
+        titleEl.textContent = title;
+        priceEl.textContent = price;
+        descEl.textContent = desc;
+
+        // Gallery
+        thumbs.innerHTML = '';
+        if (images.length) {
+          mainImg.src = images[0];
+          mainImg.alt = title;
+          images.forEach(function (src, i) {
+            var t = document.createElement('img');
+            t.src = src;
+            t.alt = title + ' photo ' + (i + 1);
+            if (i === 0) t.className = 'active';
+            t.addEventListener('click', function () {
+              mainImg.src = src;
+              thumbs.querySelectorAll('img').forEach(function (im) { im.classList.remove('active'); });
+              t.classList.add('active');
+            });
+            thumbs.appendChild(t);
+          });
+        }
+
+        // Order by email (pre-filled subject + body)
+        var subject = 'Order: ' + title;
+        var body = 'Hello Julianie,\n\nI would like to order:\n' + title + ' — ' + price + '\n\nMy size / colour preferences:\n\nThank you!';
+        orderEl.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.product').forEach(function (btn) {
+        btn.addEventListener('click', function () { openModal(btn); });
       });
-    });
+      closeEl.addEventListener('click', closeModal);
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
   </script>
 </body>
 </html>
