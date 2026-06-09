@@ -541,9 +541,11 @@
   <!-- About / Contact -->
   <section class="about container" id="about">
     <span class="eyebrow">About me</span>
-    <h2>Made by hand, with love and patience</h2>
-    <p>I'm Julianie — a knitter and slow-fashion maker. Every piece in the studio is created by my own hands, one stitch at a time, using natural fibres and traditional techniques.</p>
-    <p>If you'd like to order a piece, ask a question, or dream up something custom, I'd love to hear from you.</p>
+    <h2>Hello! My name is Julia</h2>
+    <p>I am so happy to welcome you to Julianie Studio—a space where tangible warmth is born.</p>
+    <p>To me, knitting is far more than just a craft or a way to make beautiful things. It is an invitation to slow down, take a deep breath, and bring a little piece of genuine comfort and care into our fast-paced world. It&apos;s about capturing that true sense of hygge—where no matter how wildly the wind blows outside, you have a warm cup of tea in your hands and a feeling of absolute peace.</p>
+    <p>Every single toy created in my studio is a tiny story in itself. They don&apos;t come from a factory assembly line; they are crafted stitch by stitch, slowly and tenderly. I truly believe that handmade items hold the energy of the hands that make them, which is why I only ever pick up my needles with a bright and peaceful heart.</p>
+    <p>My knitted bears and little characters are made, above all, to be held. They carry the gentle scent of home, harmony, and childhood nostalgia. Each one has its own distinct personality, a unique expression, and a touch of magic that can never be replicated. They aren&apos;t just collectible toys—they are faithful keepers of comfort for your home, always ready to share their warmth with you, day after day.</p>
     <a class="btn" href="mailto:julianochka.art@gmail.com?subject=Hello%20Julianie%20Studio">Contact me by email</a>
   </section>
 
@@ -623,6 +625,19 @@
       });
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') closeModal();
+      });
+
+      // Make all mailto links work, even inside a sandboxed preview iframe
+      document.querySelectorAll('a[href^="mailto:"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          var href = link.getAttribute('href');
+          try {
+            (window.top || window).location.href = href;
+          } catch (err) {
+            window.location.href = href;
+          }
+        });
       });
     })();
   </script>
